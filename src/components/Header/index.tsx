@@ -12,11 +12,12 @@ import {
   ProfileTitleWrapper,
 } from './styles'
 import logo from '../../assets/logo.svg'
-import { useFetch } from '../../hooks/useFetch'
+import { useFetchUserData } from '../../hooks/useFetchUserData'
 
 export function Header() {
-  const { data } = useFetch()
-  const { avatar_url, bio, company, followers, html_url, login, name } = data
+  const { userData } = useFetchUserData()
+  const { avatar_url, bio, company, followers, html_url, login, name } =
+    userData
 
   return (
     <HeaderContainer>
