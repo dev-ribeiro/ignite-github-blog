@@ -13,5 +13,6 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 100vw;
         display: flex;
         flex-direction: column;
+        background: ${(props) => props.theme['blue-900']};
     }
 `

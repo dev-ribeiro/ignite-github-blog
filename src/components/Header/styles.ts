@@ -53,10 +53,12 @@ export const ProfileTitleWrapper = styled.div`
 
 export const ProfileTitle = styled.h1`
   color: ${(props) => props.theme.white};
+  font-size: 1.5rem;
 `
 
 export const ProfileBio = styled.span`
   color: ${(props) => props.theme['gray-200']};
+  font-size: 1rem;
 `
 
 export const FollowersInfo = styled.div`
@@ -77,5 +79,6 @@ export const IconWrapper = styled.div`
 
   span {
     color: ${(props) => props.theme['gray-100']};
+    font-size: 1rem;
   }
 `
