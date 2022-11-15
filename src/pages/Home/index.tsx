@@ -1,3 +1,10 @@
+import { SearchForm } from './components/SearchForm'
+import { HomeContainer } from './styles'
+
 export function Home() {
-  return <div>HALLO</div>
+  return (
+    <HomeContainer>
+      <SearchForm />
+    </HomeContainer>
+  )
 }
