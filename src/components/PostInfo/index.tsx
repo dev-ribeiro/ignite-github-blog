@@ -10,6 +10,7 @@ import {
   PostDetails,
 } from './styles'
 import logo from '../../assets/logo.svg'
+import { NavLink } from 'react-router-dom'
 
 export function PostInfo() {
   return (
@@ -17,10 +18,10 @@ export function PostInfo() {
       <LogoImage src={logo} alt="" />
       <PostInformationContainer>
         <LinksGithubContainer>
-          <a href="/" target="_blank" rel="noreferrer">
+          <NavLink to="/">
             <i className="fa-regular fa-less-than"></i>
             VOLTAR
-          </a>
+          </NavLink>
           <a href="/" target="_blank" rel="noreferrer">
             VER NO GITHUB
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
