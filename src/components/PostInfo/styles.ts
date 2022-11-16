@@ -3,10 +3,9 @@ import backgroundImage from '../../assets/background.png'
 
 export const PostHeaderContainer = styled.header`
   width: 100%;
-  height: 18.5rem;
   display: flex;
-  gap: 2.875rem;
   flex-direction: column;
+  gap: 2.875rem;
   align-items: center;
   justify-content: flex-end;
   background-image: url(${backgroundImage});
@@ -19,16 +18,18 @@ export const LogoImage = styled.img`
 
 export const PostInformationContainer = styled.div`
   width: 54rem;
+  height: 10.5rem;
   padding: 1.5rem;
-  margin-bottom: -6.625rem;
+  margin-bottom: -5.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  justify-content: center;
   background-color: ${(props) => props.theme['blue-800']};
   border-radius: 10px;
 `
 
 export const LinksGithubContainer = styled.div`
+  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,16 +40,18 @@ export const LinksGithubContainer = styled.div`
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    font-size: 12px;
   }
 `
 
 export const PostDetails = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  /* gap: 0.5rem; */
 `
 
 export const PostTitle = styled.h1`
+  margin-bottom: 0.5rem;
   color: ${(props) => props.theme.white};
   font-size: 1.5rem;
 `
@@ -60,7 +63,6 @@ export const PostAdditionalInfo = styled.div`
 `
 
 export const IconWrapper = styled.div`
-  margin-top: 1.5rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
