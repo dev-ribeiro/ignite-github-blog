@@ -12,6 +12,7 @@ export const PostHeaderContainer = styled.header`
 `
 
 export const LogoImage = styled.img`
+  margin-top: 4rem;
   width: 10.5rem;
   height: 4rem;
 `
