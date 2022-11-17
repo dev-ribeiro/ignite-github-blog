@@ -1,22 +1,14 @@
+import Markdown from 'markdown-to-jsx'
+import { useFindPostById } from '../../hooks/useFindPostById'
 import { PostContentWrapper, PostPageContainer } from './styles'
 
 export function PostPage() {
+  const { findedPostById } = useFindPostById()
+
   return (
     <PostPageContainer>
       <PostContentWrapper>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui veniam
-          reprehenderit distinctio nulla ratione assumenda, optio corrupti.
-          Consequatur enim iusto ut quasi corrupti modi quod! Voluptatum labore
-          id unde repellendus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Qui veniam reprehenderit distinctio nulla ratione
-          assumenda, optio corrupti. Consequatur enim iusto ut quasi corrupti
-          modi quod! Voluptatum labore id unde repellendus. Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Qui veniam reprehenderit
-          distinctio nulla ratione assumenda, optio corrupti. Consequatur enim
-          iusto ut quasi corrupti modi quod! Voluptatum labore id unde
-          repellendus.
-        </p>
+        <Markdown>{findedPostById!.body}</Markdown>
       </PostContentWrapper>
     </PostPageContainer>
   )

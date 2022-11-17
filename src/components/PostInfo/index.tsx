@@ -11,8 +11,12 @@ import {
 } from './styles'
 import logo from '../../assets/logo.svg'
 import { NavLink } from 'react-router-dom'
+import { useFindPostById } from '../../hooks/useFindPostById'
+import { publishedDateRelativeToNow } from '../../utils/formatter'
 
 export function PostInfo() {
+  const { findedPostById } = useFindPostById()
+
   return (
     <PostHeaderContainer>
       <LogoImage src={logo} alt="" />
@@ -22,25 +26,29 @@ export function PostInfo() {
             <i className="fa-regular fa-less-than"></i>
             VOLTAR
           </NavLink>
-          <a href="/" target="_blank" rel="noreferrer">
+          <a href={findedPostById!.html_url} target="_blank" rel="noreferrer">
             VER NO GITHUB
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </LinksGithubContainer>
         <PostDetails>
-          <PostTitle>Javascript é legal</PostTitle>
+          <PostTitle>{findedPostById!.title}</PostTitle>
           <PostAdditionalInfo>
             <IconWrapper>
               <i className="fa-brands fa-github"></i>
-              <span>dev-ribeiro</span>
+              <span>{findedPostById!.user.login}</span>
             </IconWrapper>
             <IconWrapper>
               <i className="fa-solid fa-calendar-days"></i>
-              <span>Há 1 dia</span>
+              <span>
+                {publishedDateRelativeToNow(
+                  new Date(findedPostById!.created_at),
+                )}
+              </span>
             </IconWrapper>
             <IconWrapper>
               <i className="fa-solid fa-comment"></i>
-              <span>5 comentários</span>
+              <span>{findedPostById!.comments} comentários</span>
             </IconWrapper>
           </PostAdditionalInfo>
         </PostDetails>

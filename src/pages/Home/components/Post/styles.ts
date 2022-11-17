@@ -6,6 +6,10 @@ export const PostContainer = styled.div`
 
   background: ${(props) => props.theme['blue-700']};
   border-radius: 10px;
+
+  & > a {
+    text-decoration: none;
+  }
 `
 
 export const PostHeader = styled.header`

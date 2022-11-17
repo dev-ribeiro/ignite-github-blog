@@ -1,19 +1,21 @@
 /* eslint-disable array-callback-return */
-import { useFetchIssuesData } from '../../../../hooks/useFetchIssuesData'
+import { useContext } from 'react'
+import { PostContext } from '../../../../contexts/PostsContext'
 import { publishedDateRelativeToNow } from '../../../../utils/formatter'
 import { Post } from '../Post'
 import { PostGridContainer } from './styles'
 
 export function PostGrid() {
-  const { postsData } = useFetchIssuesData()
+  const { posts } = useContext(PostContext)
 
   return (
     <PostGridContainer>
-      {postsData.map((post) => {
+      {posts.map((post) => {
         if (post.author_association === 'OWNER') {
           return (
             <Post
-              key={JSON.stringify(post)}
+              key={post.id}
+              id={post.id}
               title={post.title}
               body={post.body}
               created_at={publishedDateRelativeToNow(new Date(post.created_at))}
