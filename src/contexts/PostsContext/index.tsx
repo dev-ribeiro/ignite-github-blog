@@ -24,19 +24,14 @@ interface PostContextProviderType {
   children: ReactNode
 }
 
-const storageKey = '@ignite-github-blog___v1'
-
 export function PostContextProvider({ children }: PostContextProviderType) {
-  const storedState = localStorage.getItem(storageKey)
-  const initialState = JSON.parse(storedState!) || []
-  const [posts, setPosts] = useState<Post[]>(initialState)
+  const [posts, setPosts] = useState<Post[]>([])
 
   useEffect(() => {
     fetch('https://api.github.com/repos/dev-ribeiro/ignite-github-blog/issues')
       .then((response) => response.json())
       .then((data) => {
         setPosts(data)
-        localStorage.setItem(storageKey, JSON.stringify(data))
       })
       .catch((error) => console.error(error))
   }, [])
