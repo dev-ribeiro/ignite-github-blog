@@ -6,16 +6,25 @@ import { Post } from '../Post'
 import { PostGridContainer } from './styles'
 
 export function PostGrid() {
-  const { posts } = useContext(PostContext)
+  const { posts, content } = useContext(PostContext)
+
+  const showPosts = !content
+    ? posts
+    : posts.filter((post) => {
+        return (
+          post.title.indexOf(content) !== -1 ||
+          post.body.indexOf(content) !== -1
+        )
+      })
 
   return (
     <PostGridContainer>
-      {posts.map((post) => {
+      {showPosts.map((post) => {
         if (post.author_association === 'OWNER') {
           return (
             <Post
               key={post.id}
-              id={post.id}
+              id={String(post.id)}
               title={post.title}
               body={post.body}
               created_at={publishedDateRelativeToNow(new Date(post.created_at))}
