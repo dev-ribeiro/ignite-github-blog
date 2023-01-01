@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const SearchFormContainer = styled.form`
-  width: 54rem;
+  min-width: 54rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -26,11 +26,17 @@ export const SearchFormContainer = styled.form`
       outline: 1px solid ${(props) => props.theme.blue};
     }
   }
+
+  @media (max-width: 768px) {
+    min-width: 0;
+    max-width: 100%;
+  }
 `
 
 export const PublicationsCountContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   h2 {
     color: ${(props) => props.theme['gray-100']};
@@ -38,5 +44,11 @@ export const PublicationsCountContainer = styled.div`
 
   span {
     color: ${(props) => props.theme['blue-200']};
+  }
+
+  @media (max-width: 768px) {
+    * {
+      font-size: 14px;
+    }
   }
 `

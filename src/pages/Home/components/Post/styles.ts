@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const PostContainer = styled.div`
-  width: 26rem;
+  max-width: 26rem;
   padding: 2rem;
 
   background: ${(props) => props.theme['blue-700']};

@@ -2,39 +2,59 @@ import styled from 'styled-components'
 import backgroundImage from '../../assets/background.png'
 
 export const HeaderContainer = styled.header`
-  width: 100%;
-  height: 18.5rem;
+  max-width: 100%;
+  max-height: 18.5rem;
   display: flex;
   gap: 2.875rem;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   background-image: url(${backgroundImage});
+
+  @media (max-width: 768px) {
+    justify-content: space-around;
+    max-height: min-content;
+  }
 `
 
 export const LogoImage = styled.img`
-  width: 10.5rem;
-  height: 4rem;
+  max-width: 10.5rem;
+  max-height: 4rem;
+
+  @media (max-width: 768px) {
+    /* margin-bottom: 1000px; */
+  }
 `
 
 export const ProfileContainer = styled.div`
-  width: 54rem;
+  max-width: 54rem;
   padding: 1.5rem;
   margin-bottom: -6.625rem;
   display: flex;
   gap: 2rem;
   background-color: ${(props) => props.theme['blue-800']};
   border-radius: 10px;
+
+  @media (max-width: 768px) {
+    margin: 0 1rem;
+    margin-bottom: 0;
+    max-width: 100%;
+    flex-direction: column;
+  }
 `
 
 export const Avatar = styled.img`
-  width: 9.25rem;
-  height: 9.25rem;
+  max-width: 9.25rem;
+  max-height: 9.25rem;
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    align-self: center;
+  }
 `
 
 export const ProfileDescription = styled.div`
-  width: 100%;
+  max-width: 100%;
 `
 
 export const ProfileTitleWrapper = styled.div`

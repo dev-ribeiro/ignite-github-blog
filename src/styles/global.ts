@@ -15,4 +15,10 @@ export const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         background: ${(props) => props.theme['blue-900']};
     }
+
+    @media (max-width: 768px) {
+        html {
+            font-size: 14px;
+        }
+    }
 `
