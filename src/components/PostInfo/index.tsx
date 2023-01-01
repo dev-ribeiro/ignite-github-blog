@@ -24,10 +24,10 @@ export function PostInfo() {
         <LinksGithubContainer>
           <NavLink to="/">
             <i className="fa-regular fa-less-than"></i>
-            VOLTAR
+            <span>VOLTAR</span>
           </NavLink>
           <a href={findedPostById!.html_url} target="_blank" rel="noreferrer">
-            VER NO GITHUB
+            <span>VER NO GITHUB</span>
             <i className="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </LinksGithubContainer>

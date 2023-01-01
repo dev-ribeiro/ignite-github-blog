@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const PostPageContainer = styled.div`
-  width: 100%;
+  max-width: 100%;
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
@@ -14,5 +14,10 @@ export const PostPageContainer = styled.div`
 
 export const PostContentWrapper = styled.div`
   padding: 40px 32px;
-  width: 54rem;
+  min-width: 54rem;
+
+  @media (max-width: 768px) {
+    min-width: 0;
+    max-width: 100%;
+  }
 `
